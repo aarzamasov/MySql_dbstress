@@ -1,0 +1,29 @@
+
+1. How to prepare table
+
+php main.php -o prepare -n normal -e InnoDB -s 1000000
+
+where
+-o - operation = prepare
+-n - name of test (available tests placed in t/ directory) = normal
+-e - engine = InnoDB, MyISAM, Falcon, etc
+-s - size of table = 1000000 rows
+
+
+2. How to run benchmark
+
+php main.php -d 60 -t $threads -o run -n normal -s 1000000  -q $test
+
+where
+-o - operation = run
+-d - duration = 60 sec
+-t - count of threads
+-s - size of table = 1000000 rows 
+-q - name of query to run (READ_PK_POINT, READ_KEY_POINT, READ_KEY_POINT_NO_DATA , ..)
+    all available queries are in t/normal.inc file
+
+
+
+example of used script - run.sh
+
+

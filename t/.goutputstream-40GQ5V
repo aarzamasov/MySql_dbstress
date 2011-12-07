@@ -1,0 +1,81 @@
+<?php
+
+/**
+ * Description of df_varchar
+ *
+ * @author Sorok7
+ * date 23/11/2011
+ */
+
+$tableName = 'df_vehicles_doors_varchar';
+              
+$activeSize = 2;
+$roleIdSize = 20000000; 
+$stateSize = 1000;
+
+$createTable = "CREATE TABLE IF NOT EXISTS `$tableName` (
+`id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+`DealerID` varchar(100) CHARACTER SET latin1 NOT NULL DEFAULT '',
+`StockNumber` varchar(250) CHARACTER SET latin1 NOT NULL DEFAULT '',
+`NewUsed` varchar(45) CHARACTER SET latin1 NOT NULL DEFAULT '',
+`Year` int(10) unsigned NOT NULL DEFAULT '0',
+`Make` varchar(250) CHARACTER SET latin1 NOT NULL DEFAULT '',
+`Model` varchar(250) CHARACTER SET latin1 NOT NULL DEFAULT '',
+`ModelNumber` varchar(250) CHARACTER SET latin1 NOT NULL DEFAULt '',
+`Body` varchar(250) CHARACTER SET latin1 NOT NULL DEFAULT '',
+`Trim` varchar(250) CHARACTER SET latin1 NOT NULL DEFAULT '',
+`StyleDescription` varchar(45) CHARACTER SET latin1 NOT NULL DE
+`Doors` varchar(250) CHARACTER SET latin1 NOT NULL DEFAULT '',
+`VIN` varchar(45) CHARACTER SET latin1 NOT NULL DEFAULT '',
+`SellingPrice` int(10) unsigned NOT NULL DEFAULT '0',
+`InvoiceAmount` int(10) unsigned NOT NULL DEFAULT '0',
+`BlueBook` int(10) unsigned NOT NULL DEFAULT '0',
+`MSRP` int(10) unsigned NOT NULL DEFAULT '0',
+`MiscPrice1` int(10) unsigned NOT NULL DEFAULT '0',
+`MiscPrice2` int(10) unsigned NOT NULL DEFAULT '0',
+`MiscPrice3` int(10) unsigned NOT NULL DEFAULT '0',
+`InternetPrice` int(10) unsigned NOT NULL DEFAULT '0',
+`NADARetailPrice` int(10) unsigned NOT NULL DEFAULT '0',
+`Miles` int(10) unsigned NOT NULL DEFAULT '0',
+`Transmission` varchar(250) CHARACTER SET latin1 NOT NULL DEFAULT '',
+`TransmissionDescription` varchar(45) CHARACTER SET latin1 NOT NULL DEFAULT '',
+`TransmissionSpeed` varchar(45) CHARACTER SET latin1 DEFAULT '',
+`EngineCylinders` varchar(250) CHARACTER SET latin1 NOT NULL DEFAULT '',
+`EngineDisplacement` varchar(250) CHARACTER SET latin1 NOT NULL DEFAULT '',
+`EngineDescription` varchar(45) CHARACTER SET latin1 NOT NULL DEFAULT '',
+`EngineAspirationType` varchar(45) CHARACTER SET latin1 NOT NULL DEFAULT '',
+`EngineBlockType` varchar(45) CHARACTER SET latin1 NOT NULL DEFAULT '',
+`InteriorColor` varchar(250) DEFAULT NULL,
+`IntUpholstery` varchar(45) CHARACTER SET latin1 NOT NULL DEFAULT '',
+`IntColorGeneric` varchar(45) CHARACTER SET latin1 NOT NULL DEFAULT '',
+`ExteriorColor` varchar(250) DEFAULT NULL,
+`ExtColorGeneric` varchar(45) CHARACTER SET latin1 NOT NULL DEFAULT '',
+`PhotoCount` int(10) unsigned NOT NULL DEFAULT '0',
+`DateInStock` varchar(45) CHARACTER SET latin1 DEFAULT NULL,
+`DaysInStock` int(10) unsigned NOT NULL DEFAULT '0',
+`VehicleDescription` text CHARACTER SET latin1,
+`Certified` int(10) unsigned NOT NULL DEFAULT '0',
+`StandardBody` varchar(250) NOT NULL,
+`SpecialsPrice` int(10) unsigned NOT NULL DEFAULT '0',
+`SpecialsStartDate` varchar(45) CHARACTER SET latin1 DEFAULT NULL,
+`SpecialsEndDate` varchar(45) CHARACTER SET latin1 DEFAULT NULL,
+`SpecialsMonthlyPayment` int(10) unsigned NOT NULL DEFAULT '0',
+`SpecialsDisclaimer` varchar(250) CHARACTER SET latin1 NOT NULL DEFAULT '',
+`MakeStandard` varchar(250) CHARACTER SET latin1 NOT NULL DEFAULT '',
+`ModelStandard` varchar(250) CHARACTER SET latin1 NOT NULL DEFAULT '',
+`WheelbaseCode` varchar(45) CHARACTER SET latin1 NOT NULL DEFAULT '',
+`EPAHighway` varchar(45) CHARACTER SET latin1 NOT NULL DEFAULT '',
+`EPACity` varchar(45) CHARACTER SET latin1 NOT NULL DEFAULT '',
+`FuelType` varchar(45) CHARACTER SET latin1 NOT NULL DEFAULT '',
+`Drivetrain` varchar(45) CHARACTER SET latin1 NOT NULL DEFAULT '',
+`Active` int(10) unsigned NOT NULL DEFAULT '0',
+`FirstImported` int(11) DEFAULT NULL,
+`LastImported` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+`LastUpdated` timestamp NULL DEFAULT NULL,
+`IsSpecial` tinyint(1) NOT NULL DEFAULT '0',
+`ColorMatchedImage` varchar(200) CHARACTER SET latin1 DEFAULT NULL,
+`CertificationWarranty` int(10) DEFAULT NULL,
+`HasWarranty` int(11) DEFAULT NULL,
+`VideoLink` varchar(200) CHARACTER SET latin1 DEFAULT NULL,
+`Comment1` text CHARACTER SET latin1,
+`Comment2` varc

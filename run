@@ -1,0 +1,12 @@
+#/home/vadim/php51/bin/php main.php  --max-time 180 -t 4 -o prepare -n df_varchar_dfi_clients -s 10000
+/home/vadim/php51/bin/php main.php  --max-time 180 -t 256 -o run -n normal -s 10000
+
+php main.php -o prepare -n df_varchar -e MYISAM -s 1000000
+php main.php -d 60 -t $threads -o run -n df_varchar -s 1000000  -q $test
+
+php main.php  -d 180 -t 64 -o run -n df_varchar -s 1000000 -e MYISAM -q READ_PK_POINT
+
+nohup ./run.sh>&/root/test_result_df_varchar.log &
+
+
+
