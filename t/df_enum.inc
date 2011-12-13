@@ -54,7 +54,7 @@ $testQueries = array(
     array(
         'query' =>
         "SELECT Active FROM $tableName WHERE RoleId = %d limit 5",
-        'params' =>  create_function('','return array(mt_rand(1,'.$roleIdSize.'));'),
+        'params' =>  create_function('','return array(mt_rand(1,'.$mysqlInt.'));'),
     ),
     'READ_PK_POINT_INDEX' =>
     array(
@@ -84,25 +84,25 @@ $testQueries = array(
     array(
         'query' =>
         "SELECT FirstName  FROM $tableName WHERE RoleId = %d and state_id between %d and %d",
-        'params' => create_function('',' $p1=mt_rand(1,'.$roleIdSize.'); $p2=mt_rand(1,'.$stateSize.'); return array($p1, $p2, $p2+10);'),
+        'params' => create_function('',' $p1=mt_rand(1,'.$mysqlInt.'); $p2=mt_rand(1,'.$stateSize.'); return array($p1, $p2, $p2+10);'),
     ),
     'READ_KEY_RANGE_NO_DATA' =>
     array(
         'query' =>
         "SELECT FirstName  FROM $tableName WHERE RoleId = %d and state_id between %d and %d",
-        'params' => create_function('',' $p1=mt_rand(1,'.$roleIdSize.'); $p2=mt_rand(1,'.$stateSize.'); return array($p1, $p2, $p2+10);'),
+        'params' => create_function('',' $p1=mt_rand(1,'.$mysqlInt.'); $p2=mt_rand(1,'.$stateSize.'); return array($p1, $p2, $p2+10);'),
     ),
     'READ_KEY_RANGE_LIMIT' =>
     array(
         'query' =>
         "SELECT FirstName  FROM $tableName WHERE RoleId = %d and state_id between %d and %d LIMIT 50",
-        'params' => create_function('',' $p1=mt_rand(1,'.$roleIdSize.'); $p2=mt_rand(1,'.$stateSize.'); return array($p1, $p2, $p2+10);'),
+        'params' => create_function('',' $p1=mt_rand(1,'.$mysqlInt.'); $p2=mt_rand(1,'.$stateSize.'); return array($p1, $p2, $p2+10);'),
     ),
     'READ_KEY_RANGE_NO_DATA_LIMIT' =>
     array(
         'query' =>
         "SELECT city  FROM $tableName WHERE RoleId = %d and state_id between %d and %d LIMIT 50",
-        'params' => create_function('',' $p1=mt_rand(1,'.$roleIdSize.'); $p2=mt_rand(1,'.$stateSize.'); return array($p1, $p2, $p2+10);'),
+        'params' => create_function('',' $p1=mt_rand(1,'.$mysqlInt.'); $p2=mt_rand(1,'.$stateSize.'); return array($p1, $p2, $p2+10);'),
     ),
     'UPDATE_POINT_PK' =>
     array(
@@ -126,7 +126,7 @@ $testQueries = array(
     array(
         'query' =>
         "UPDATE $tableName SET FirstName=%s WHERE RoleId = %d LIMIT 5",
-        'params' => create_function('','$p1=mt_rand(1,'.$roleIdSize.'); return array(rand_varchar(64), $p1);'),
+        'params' => create_function('','$p1=mt_rand(1,'.$mysqlInt.'); return array(rand_varchar(64), $p1);'),
     ),
     'DELETE_POINT_PK' =>
     array(
@@ -144,34 +144,34 @@ $testQueries = array(
     array(
         'query' =>
         "DELETE FROM $tableName WHERE RoleId = %d LIMIT 5",
-        'params' =>  create_function('','return array(mt_rand(1,'.$roleIdSize.'));'),
+        'params' =>  create_function('','return array(mt_rand(1,'.$mysqlInt.'));'),
     ),
     'DELETE_RANGE_KEY' =>
     array(
         'query' =>
         "DELETE FROM $tableName WHERE RoleId = %d and state_id between %d and %d LIMIT 5",
-        'params' => create_function('',' $p1=mt_rand(1,'.$roleIdSize.'); $p2=mt_rand(1,'.$stateSize.'); return array($p1, $p2, $p2+10);'),
+        'params' => create_function('',' $p1=mt_rand(1,'.$mysqlInt.'); $p2=mt_rand(1,'.$stateSize.'); return array($p1, $p2, $p2+10);'),
     ),
     'INSERT_SEQ' =>
     array(
         'query' =>
         "INSERT INTO $tableName (id, name, password, email, city, zip, dob, country_id, state_id) VALUES (%d, %s, %s, %s, %s, %s, NOW(), %d, %d)",
         'params' => create_function('',
-            'return array(get_id(), rand_varchar(64), rand_varchar(64), rand_email(), rand_varchar(64), rand_varchar(8), mt_rand(1,'.$roleIdSize.'), mt_rand(1,'.$stateSize.'));'),
+            'return array(get_id(), rand_varchar(64), rand_varchar(64), rand_email(), rand_varchar(64), rand_varchar(8), mt_rand(1,'.$mysqlInt.'), mt_rand(1,'.$stateSize.'));'),
     ),
     'INSERT_REVSEQ' =>
     array(
         'query' =>
         "INSERT INTO $tableName (id, Login, Password, RoleId, Email, Active, FirstName, LastName, Phone) VALUES (%d, %s, %s, %s, %s, %s, %s, %s, %s)",
         'params' => create_function('',
-            'return array(get_revid(), rand_varchar(32), rand_varchar(32), mt_rand(1,'.$roleIdSize.'), rand_email(), mt_rand(1,'.$activeSize.'), rand_varchar(30) );'),
+            'return array(get_revid(), rand_varchar(32), rand_varchar(32), mt_rand(1,'.$mysqlInt.'), rand_email(), mt_rand(1,'.$activeSize.'), rand_varchar(30) );'),
     ),
     'INSERT_RANDOM' =>
     array(
         'query' =>
         "INSERT IGNORE INTO $tableName (id, Login, Password, RoleId, Email, Active, FirstName, LastName, Phone) VALUES (%d, %s, %s, %s, %s, %s, %s, %s, %s)",
         'params' => create_function('',
-            'return array(mt_rand(1,4294967295), rand_varchar(32), rand_varchar(32), mt_rand(1,'.$roleIdSize.'), rand_email(), mt_rand(1,'.$activeSize.'), rand_varchar(30) );'),
+            'return array(mt_rand(1,4294967295), rand_varchar(32), rand_varchar(32), mt_rand(1,'.$mysqlInt.'), rand_email(), mt_rand(1,'.$activeSize.'), rand_varchar(30) );'),
     ),
 );
 
