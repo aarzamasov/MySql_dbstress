@@ -4,7 +4,7 @@ $tableName = 'df_enum';
 
 $mysqlInt = 2147483647;
 
-$createTable = "CREATE TABLE `dfi_form_emails` (
+$createTable = "CREATE TABLE $tableName (
   `Id` int(11) NOT NULL,
   `FormId` int(11) NOT NULL,
   `DealerId` int(11) NOT NULL,
