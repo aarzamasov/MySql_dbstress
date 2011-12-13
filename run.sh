@@ -16,20 +16,7 @@ for test in $TESTS;
 do
         for threads in 1 4 16 64 128 256 384 512 600; 
         do
-	       	php main.php  -d 360 -t $threads -o run -n df_vehicles_doors_varchar -s 1000000 -e myisam -q $test
-                killer
-        done
-done
-
-killer
-killer
-killer
-
-for test in $TESTS;
-do
-        for threads in 1 4 16 64 128 256 384 512 600; 
-        do
-	       	php /root/testsuite/main.php  -d 360 -t $threads -o run -n df_text -s 1000000 -e myisam -q $test
+	       	php main.php  -d 360 -t $threads -o run -n df_enum -s 1000000 -e myisam -q $test
                 killer
         done
 done
