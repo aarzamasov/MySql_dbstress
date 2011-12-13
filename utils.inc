@@ -24,15 +24,7 @@ function rand_email()
 function rand_enum_email()
 {
     $max = 3;
-    global $randtable;
     $idx = mt_rand(1, $max);
-    print_r($randtable);
-    while ($randtable[$idx])
-    {
-        $idx++;
-        if ($idx > $max) $idx=1;
-    }
-    $randtable[$idx] = 1;
 
     if ($idx == 1) return "PLAIN";
     if ($idx == 2) return "XML";
