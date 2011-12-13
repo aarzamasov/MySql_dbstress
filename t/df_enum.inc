@@ -23,7 +23,7 @@ $populateData = array(
     'FormId'      =>  create_function('', 'return mt_rand(1,'.$mysqlInt.');'),
     'DealerId'    =>  create_function('', 'return mt_rand(1,'.$mysqlInt.');'),
     'ToName'   =>  create_function('', 'return rand_varchar(100);'),
-    'Email'   =>  create_function('', 'return rand_varchar(100);'),
+    'ToEmail'   =>  create_function('', 'return rand_varchar(100);'),
     'EmailType'   =>  create_function('', 'return rand_enum_email();'),
 );
 
