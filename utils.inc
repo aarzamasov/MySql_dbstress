@@ -26,9 +26,9 @@ function rand_enum_email()
     $max = 3;
     $idx = mt_rand(1, $max);
 
-    if ($idx == 1) return "PLAIN";
-    if ($idx == 2) return "XML";
-    if ($idx == 3) return "HTML";
+    if ($idx == 1) return "'PLAIN'";
+    if ($idx == 2) return "'XML'";
+    if ($idx == 3) return "'HTML'";
 
 }
 
