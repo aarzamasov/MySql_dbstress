@@ -10,7 +10,7 @@ $createTable = "CREATE TABLE $tableName (
   `DealerId` int(11) NOT NULL,
   `ToName` char(100) NOT NULL,
   `ToEmail` char(100) NOT NULL,
-  `EmailType` enum(''PLAIN'',''XML'',''HTML'') NOT NULL,
+  `EmailType` enum('PLAIN','XML','HTML') NOT NULL,
   PRIMARY KEY (`Id`),
   KEY `IndxFormId` (`FormId`),
   KEY `IndxDealerId` (`DealerId`),
