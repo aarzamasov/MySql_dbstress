@@ -3,6 +3,7 @@
 $tableName = 'df_enum';
 
 $mysqlInt = 2147483647;
+$stateSize = 2;
 
 $createTable = "CREATE TABLE $tableName (
   `Id` int(11) NOT NULL,
