@@ -26,6 +26,7 @@ function rand_enum_email()
     $max = 3;
     global $randtable;
     $idx = mt_rand(1, $max);
+    print($idx);
     while ($randtable[$idx])
     {
         $idx++;
