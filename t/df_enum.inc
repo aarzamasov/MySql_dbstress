@@ -6,7 +6,7 @@ $mysqlInt = 2147483647;
 $stateSize = 2;
 $activeSize = 1;
 
-$createTable = "CREATE TABLE $tableName (
+$createTable = "CREATE TABLE  IF NOT EXISTS  `$tableName` (
   `Id` int(11) NOT NULL,
   `FormId` int(11) NOT NULL,
   `DealerId` int(11) NOT NULL,
@@ -16,7 +16,7 @@ $createTable = "CREATE TABLE $tableName (
   PRIMARY KEY (`Id`),
   KEY `IndxFormId` (`FormId`),
   KEY `IndxDealerId` (`DealerId`),
-  KEY `IndxEmail` (`EmailType`)";
+  KEY `IndxEmail` (`EmailType`))";
 
 $populateData = array(
     'Id' => create_function('', 'return get_autoinc();'),
