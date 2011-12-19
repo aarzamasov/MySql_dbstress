@@ -16,7 +16,7 @@ for test in $TESTS;
 do
         for threads in 1 4 16 64 128 256 384 512 600;
         do
-	       	php main.php  -d 3 -t $threads -o run -n df_enumint -s 1000000 -e myisam -q $test
+	       	php main.php  -d 360 -t $threads -o run -n df_enumint -s 1000000 -e myisam -q $test
                 killer
         done
 done
