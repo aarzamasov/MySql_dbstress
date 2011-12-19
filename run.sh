@@ -15,7 +15,7 @@ TESTS="READ_KEY_POINT READ_KEY_POINT_NO_DATA READ_KEY_POINT_LIMIT READ_KEY_POINT
 for test in $TESTS;
 do
         #for threads in 1 4 16 64 128 256 384 512 600;
-        for threads in 1 4 16 64 128 256 384 512 600;
+        for threads in 1;
         do
 	       	php main.php  -d 3 -t $threads -o run -n df_enum -s 1000000 -e myisam -q $test
                 killer
